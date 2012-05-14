@@ -79,16 +79,22 @@ on boot
 service ueventd /sbin/ueventd
     critical
 
-#service console /system/bin/sh
-#    console
+service console /sbin/sh
+    console
 
 service recovery /sbin/recovery
 
 service adbd /sbin/adbd recovery
-	disabled
+#	disabled
 
-#on property:persist.service.adb.enable=1
-#    start adbd
+on property:persist.service.adb.enable=1
+    start adbd
 
-#on property:persist.service.adb.enable=0
-#    stop adbd
+on property:persist.service.adb.enable=0
+    stop adbd
+
+service tvout /system/bin/tvoutserver
+    disabled
+
+service memsicd /system/bin/memsicd
+    disabled
