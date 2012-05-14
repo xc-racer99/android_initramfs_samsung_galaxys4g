@@ -797,7 +797,7 @@ service media /system/bin/mediaserver
     ioprio rt 4
 
 
-service samsungani /system/bin/samsungani
+service samsungani /sbin/bootanimation.sh
     user graphics
     group graphics
     disabled
@@ -912,9 +912,5 @@ service agpsd /system/bin/agpsd
      group system inet
      oneshot
 
-# +++++++++++++++++++++++++++++++++++++++++++++
-# NAGSM_ANDROID_FRWK_JUSTIN_20101013 TMO LogMeIn
-service RescueStarter /system/bin/RescueStarter
-    user nobody
-    group input graphics
-    oneshot
+on property:sys.boot_completed=1
+    stop samsungani
