@@ -107,14 +107,6 @@ loglevel 3
     insmod /lib/modules/rfs_fat.ko
     insmod /lib/modules/j4fs.ko
 
-    insmod /lib/modules/Si4709_driver.ko
-
-    # ko files for vibrator
-    insmod /lib/modules/vibrator.ko
-
-    # ko files for bthid
-    insmod /lib/modules/bthid.ko
-
     #temp
     chown root root /sbin/fat.format
     chmod 750 /sbin/fat.format
