@@ -107,6 +107,8 @@ loglevel 3
     insmod /lib/modules/rfs_fat.ko
     insmod /lib/modules/j4fs.ko
 
+    insmod /lib/modules/vibrator.ko
+
     #temp
     chown root root /sbin/fat.format
     chmod 750 /sbin/fat.format

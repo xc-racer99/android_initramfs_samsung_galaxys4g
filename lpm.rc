@@ -37,6 +37,8 @@ on early-fs
     mount j4fs /dev/block/stl6 /mnt/.lfs
     insmod /lib/modules/param.ko
 
+    insmod /lib/modules/vibrator.ko
+
 on fs
     mount tmpfs tmpfs /tmp
     mount ext4 /dev/block/stl9 /system wait ro
