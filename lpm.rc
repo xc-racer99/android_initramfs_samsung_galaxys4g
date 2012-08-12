@@ -41,9 +41,9 @@ on early-fs
 
 on fs
     mount tmpfs tmpfs /tmp
-    mount ext4 /dev/block/stl9 /system wait ro
     mount rfs /dev/block/stl9 /system check=no
-    #mount rfs /dev/block/stl9 /system ro remount
+    mount rfs /dev/block/stl9 /system ro remount
+    mount ext4 /dev/block/stl9 /system wait ro
 
     exec apply_disk_policy
 
