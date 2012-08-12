@@ -45,6 +45,8 @@ on early-fs
 
 on fs
     mount tmpfs tmpfs /tmp
+    mount ext4 /dev/block/stl9 /system wait rw
+    mount rfs /dev/block/stl9 /system check=no
     mount ext4 /dev/block/stl11 /cache nosuid nodev noatime wait
     mount rfs /dev/block/stl11 /cache nosuid nodev check=no
 
@@ -92,3 +94,9 @@ on property:persist.service.adb.enable=1
 
 on property:persist.service.adb.enable=0
     stop adbd
+
+service tvout /system/bin/tvoutserver
+    disabled
+
+service memsicd /system/bin/memsicd
+    disabled
